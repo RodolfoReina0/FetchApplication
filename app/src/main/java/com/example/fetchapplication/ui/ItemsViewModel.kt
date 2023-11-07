@@ -29,7 +29,7 @@ class ItemsViewModel : ViewModel() {
             uiState = try {
                 val listResult = RetrofitInstance.retrofitService.getItems()
                     .filter { !it.name.isNullOrBlank() }
-                    .sortedWith(compareBy({ it.listId }, { it.name }))
+                    .sortedWith(compareBy({ it.listId}, { it.name?.substring(5)?.toInt()}))
                 UiState.Success(listResult)
             } catch (e: IOException){
                 UiState.Error
