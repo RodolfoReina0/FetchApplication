@@ -1,9 +1,9 @@
-package com.example.fetchapplication.network
+package com.example.fetchapplication.model
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Data (
+data class FetchItem (
     @SerialName("id")
     var id: Int,
 

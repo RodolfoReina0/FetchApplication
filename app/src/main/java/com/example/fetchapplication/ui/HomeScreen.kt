@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.example.fetchapplication.R
-import com.example.fetchapplication.network.Data
+import com.example.fetchapplication.model.FetchItem
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -48,14 +48,14 @@ fun LoadingScreen(){
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ResultScreen(itemsList: List<Data>) {
+fun ResultScreen(itemsList: List<FetchItem>) {
     
 //    Display all the items grouped by "listId"
     
     val groupedItems = itemsList.groupBy { it.listId }
     Scaffold(
         topBar = { TopAppBar(
-            title = { Text(text = "Fetch App(lication)", textAlign = TextAlign.Center) },
+            title = { Text(text = "Fetch Assignment", textAlign = TextAlign.Center) },
             colors = TopAppBarDefaults.topAppBarColors(
                 containerColor = Color(0xFFED7D31),
                 titleContentColor = Color(0xFFF6F1EE)
@@ -92,7 +92,7 @@ fun SectionHeader(headerText: String) {
 }
 
 @Composable
-fun ListItem(item: Data) {
+fun ListItem(item: FetchItem) {
     Card(
         modifier = Modifier
             .fillMaxWidth()

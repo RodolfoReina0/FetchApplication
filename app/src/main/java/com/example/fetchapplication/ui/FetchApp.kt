@@ -5,6 +5,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun FetchApp() {
-    val itemsViewModel: ItemsViewModel = viewModel()
-    HomeScreen(itemsViewModel.uiState)
+    val fetchItemsViewModel: FetchItemsViewModel = viewModel()
+    HomeScreen(fetchItemsViewModel.uiState)
 }

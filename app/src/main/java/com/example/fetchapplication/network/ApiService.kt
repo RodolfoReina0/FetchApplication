@@ -1,4 +1,5 @@
 package com.example.fetchapplication.network
+import com.example.fetchapplication.model.FetchItem
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -7,7 +8,7 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET("/hiring.json")
-    suspend fun getItems(): List<Data>
+    suspend fun getItems(): List<FetchItem>
 }
 
 private const val BASE_URL =
